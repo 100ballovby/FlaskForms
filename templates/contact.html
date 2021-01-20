@@ -6,16 +6,45 @@
         <div class="form-field">
             {{ form.name.label }}
             {{ form.name(size=20) }}
+
+            <!-- Отображаем ошибки поля name -->
+            {% if form.name.errors %}
+                <ul class="errors"> <!-- unordered list - маркированный список -->
+                    {% for error in form.name.error %}
+                        <li>{{ error }}</li><!-- list item - элемент списка -->
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <!-- ####### -->
         </div>
 
         <div class="form-field">
             {{ form.email.label }}
             {{ form.email }}
+            <!-- Отображаем ошибки поля email -->
+            {% if form.email.errors %}
+                <ul class="errors"> <!-- unordered list - маркированный список -->
+                    {% for error in form.email.error %}
+                        <li>{{ error }}</li><!-- list item - элемент списка -->
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <!-- ####### -->
         </div>
 
         <div class="form-field">
             {{ form.body.label }}
             {{ form.body }}
+
+            <!-- Отображаем ошибки поля body -->
+            {% if form.body.errors %}
+                <ul class="errors"> <!-- unordered list - маркированный список -->
+                    {% for error in form.body.error %}
+                        <li>{{ error }}</li><!-- list item - элемент списка -->
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <!-- ####### -->
         </div>
         {{ form.submit }}
     </form>
