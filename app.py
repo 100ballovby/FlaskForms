@@ -10,7 +10,7 @@ def main_page():
     return render_template('index.html')
 
 
-@app.route('/contact', methods=('GET', 'POST'))
+@app.route('/contact', methods=["GET", "POST"])
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
@@ -20,7 +20,13 @@ def contact():
 
 @app.route('/signup')
 def signup():
-    return 'hellpo'
+    return 'hello'
+
+
+@app.route('/success')
+def success():
+    return render_template('success.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
